@@ -270,13 +270,10 @@ class bokeh_object():
                     x,y = mirror_d2u(x,y)
             x = list(x)
             y = list(y)
-
-            source.data['x'] = x
-            source.data['y'] = y
-
             x.append(x[0])
             y.append(y[0])
-
+            source.data['x'] = x
+            source.data['y'] = y
             p = figure1.line(x, y, line_width=2,color=line_color)
             previous_line = p    
         plot_line_button.on_click(plot_line)
